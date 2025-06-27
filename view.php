@@ -84,7 +84,7 @@
     <h1>Packt Online Shop</h1>
     <?php 
     // Connect and select:
-    $dbc = mysqli_connect('localhost', 'root', '', 'packt_online_shop');
+    $dbc = mysqli_connect('localhost', 'root', '', 'online_shop');
 
     // Define the query:
     $query = 'SELECT * FROM products ORDER BY productid DESC limit 50';
