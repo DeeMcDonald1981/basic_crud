@@ -93,7 +93,7 @@ input[type="submit"]:hover {
     <?php
 
     // Connect and select:
-    $dbc = mysqli_connect('localhost', 'root', '', 'packt_online_shop');
+    $dbc = mysqli_connect('localhost', 'root', '', 'online_shop');
 
     if (isset($_GET['productid']) && is_numeric($_GET['productid'])) { // Display the entry in a form:
 
