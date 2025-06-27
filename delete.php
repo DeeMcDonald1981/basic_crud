@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Delete a Blog Entry</title>
+    <title>Delete a Product</title>
     <style>
         /* styles.css */
 
@@ -88,7 +88,7 @@ input[type="submit"]:hover {
     </style>
 </head>
 <body>
-    <h1>Delete an Entry</h1>
+    <h1>Delete Product</h1>
 
     <?php
 
@@ -105,12 +105,12 @@ input[type="submit"]:hover {
               ?>
                 <div class="container">
                     <form action="delete.php" method="post">
-                        <p>Are you sure you want to delete this entry?</p>
+                        <p>Are you sure you want to delete this product?</p>
                         <p><h3> <?php echo $row['productname'] ?></h3></p>
                         <p>Price: <?php echo $row['netretailprice'] ?></p>
                         <p>Wholesale Price : <?php echo $row['wholesaleprice'] ?></p>
                         <input type="hidden" name="productid" value="<?php echo $_GET['productid'] ?>">
-                        <input type="submit" names="submit" value="Delete this Entry">
+                        <input type="submit" names="submit" value="Delete this Product">
                         <a href="view.php"><button class="btn">Home</btn></a>
 
                     </form>
@@ -118,7 +118,7 @@ input[type="submit"]:hover {
               <?php
 
         } else { // Couldn't get the information.
-            print '<p style="color: red;">Could not retrieve the blog entry because:<br>' . mysqli_error($dbc) . '.</p><p>The query being run was: ' . $query . '</p>';
+            print '<p style="color: red;">Could not retrieve the product because:<br>' . mysqli_error($dbc) . '.</p><p>The query being run was: ' . $query . '</p>';
         }
 
     } elseif (isset($_POST['productid']) && is_numeric($_POST['productid'])) { // Handle the form.
@@ -129,10 +129,10 @@ input[type="submit"]:hover {
 
         // Report on the result:
         if (mysqli_affected_rows($dbc) == 1) {
-            print '<p>The blog entry has been deleted.</p>
+            print '<p>The product has been deleted.</p>
             <button class="btn"><a href="view.php">Home</a>';
         } else {
-            print '<p style="color: red;">Could not delete the blog entry because:<br>' . mysqli_error($dbc) . '.</p><p>The query being run was: ' . $query . '</p>
+            print '<p style="color: red;">Could not delete the product because:<br>' . mysqli_error($dbc) . '.</p><p>The query being run was: ' . $query . '</p>
             <button class="btn"><a href="view.php">Home</a>';
         }
 
