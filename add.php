@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 	if (!$problem) {
 
 		// Connect and select:
-		$dbc = mysqli_connect('localhost', 'root', '', 'packt_online_shop');
+		$dbc = mysqli_connect('localhost', 'root', '', 'online_shop');
 
 		// Define the query:
 		$unitkgweight = trim(strip_tags($_POST['unitkgweight']));
