@@ -76,7 +76,7 @@
 <?php
 
 // Connect and select:
-$dbc = mysqli_connect('localhost', 'root', '', 'packt_online_shop');
+$dbc = mysqli_connect('localhost', 'root', '', 'online_shop');
 
 // Set the character set:
 mysqli_set_charset($dbc, 'utf8');
